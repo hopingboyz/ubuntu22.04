@@ -39,20 +39,19 @@ docker build -t ubuntu-vm .
 
 docker run --rm -it \
  --device /dev/kvm:/dev/kvm \
- -p 6080:6080 -p 2025:2222 \
+ -p 6081:6080 -p 2025:2222 \
  -e VM_RAM=4096 \
  -e VM_CPU=2 \
  -e VM_DISK_SIZE=50G \
  -v /etc/vmdata:/data \
- ubuntu-kvm-vm
+ hopingboyz/ubuntu22.04
 
 # Run the container if you dont have KVM access
 
 docker run --rm -it \
- -p 6080:6080 -p 2025:2222 \
+ -p 6081:6080 -p 2025:2222 \
  -e VM_RAM=4096 \
  -e VM_CPU=2 \
  -e VM_DISK_SIZE=50G \
  -v /etc/vmdata:/data \
- ubuntu-kvm-vm
-
+ hopingboyz/ubuntu22.04
